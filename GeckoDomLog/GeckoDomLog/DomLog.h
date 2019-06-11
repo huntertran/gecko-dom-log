@@ -1,13 +1,16 @@
 #ifndef DomLog_h
 #define DomLog_h
 
+#include <string>
+using std::string;
+
 #include "DomLogNode.h"
 
 class DomLog
 {
 public:
 	DomLog();
-	void initDomLogs();
+	void recordLog(string functionName);
 	void getDomLogs();
 
 private:

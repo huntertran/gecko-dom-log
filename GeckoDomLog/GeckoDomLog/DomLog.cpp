@@ -13,12 +13,24 @@ DomLog::DomLog()
 
 	for (int i=0;i< numberOfRecords;i++)
 	{
-		if(loggedNamesSize > (i+1))
+		if(loggedNamesSize >= (i+1))
 		{
 			domLogs[i].setNode(loggedNames[i], 0);
 		}
 		else
 		{
+			break;
+		}
+	}
+}
+
+void DomLog::recordLog(string functionName)
+{
+	for (int i=0;i<numberOfRecords;i++)
+	{
+		if(domLogs[i].compareName(functionName))
+		{
+			domLogs[i].increaseCount();
 			break;
 		}
 	}
