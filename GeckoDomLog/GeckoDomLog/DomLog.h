@@ -6,7 +6,7 @@ using std::string;
 
 #include "DomLogNode.h"
 
-class DomLog
+static class DomLog
 {
 public:
 	DomLog();
@@ -16,6 +16,6 @@ public:
 private:
 	const static int numberOfRecords = 50;
 	DomLogNode domLogs[numberOfRecords];
-};
+} domLog;
 
 #endif

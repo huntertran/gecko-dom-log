@@ -11,7 +11,7 @@ int main()
 {
     cout << "Hello World!\n";
 
-	DomLog domLog;
+	//DomLog domLog;
 
 	domLog.recordLog("GetElementById");
 	domLog.recordLog("GetElementById");
