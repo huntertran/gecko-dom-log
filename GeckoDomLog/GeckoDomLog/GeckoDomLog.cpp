@@ -19,4 +19,5 @@ int main()
 	domLog.recordLog("Test New Function");
 
 	domLog.getDomLogs();
+	domLog.exportFile("dom_log.csv");
 }
