@@ -5,41 +5,48 @@ using std::endl;
 
 #include "DomLog.h"
 
-DomLog::DomLog()
+void DomLog::recordLog(string functionName)
 {
-	const string loggedNames[] = { "GetElementById","GetElementsByTagName" };
+	const int size = domLogs.size();
 
-	const int loggedNamesSize = sizeof(loggedNames) / sizeof(*loggedNames);
+	bool isNewName = true;
 
-	for (int i=0;i< numberOfRecords;i++)
+	for (int i=0;i<size;i++)
 	{
-		if(loggedNamesSize >= (i+1))
+		DomLogNode *currentNode = &domLogs.at(i);
+
+		if((*currentNode).compareIndexChar(functionName[0]))
 		{
-			domLogs[i].setNode(loggedNames[i], 0);
+			if ((*currentNode).compareName(functionName))
+			{
+				(*currentNode).increaseCount();
+				isNewName = false;
+				break;
+			}
 		}
-		else
-		{
-			break;
-		}
+	}
+
+	if(isNewName)
+	{
+		// name not existed in list
+		pushNewName(functionName, 1);
 	}
 }
 
-void DomLog::recordLog(string functionName)
+void DomLog::pushNewName(string functionName, int initialCount)
 {
-	for (int i=0;i<numberOfRecords;i++)
-	{
-		if(domLogs[i].compareName(functionName))
-		{
-			domLogs[i].increaseCount();
-			break;
-		}
-	}
+	DomLogNode node;
+	node.setNode(functionName, initialCount);
+
+	domLogs.push_back(node);
 }
 
 void DomLog::getDomLogs()
 {
-	for (int i=0;i< numberOfRecords;i++)
+	int size = domLogs.size();
+
+	for (int i=0;i<size;i++)
 	{
-		cout << domLogs[i].getName() << ": " << domLogs[i].getCount() << endl;
+		cout << domLogs.at(i).getName() << ": " << domLogs.at(i).getCount() << endl;
 	}
 }

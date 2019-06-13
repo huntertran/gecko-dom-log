@@ -23,5 +23,7 @@ int main()
 	domLog.recordLog("GetElementById");
 	domLog.recordLog("GetElementById");
 
+	domLog.recordLog("Test New Function");
+
 	domLog.getDomLogs();
 }

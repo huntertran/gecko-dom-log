@@ -14,12 +14,14 @@ public:
 	void setNode(string name, int count);
 	int increaseCount();
 	bool compareName(string nameToCompare);
+	bool compareIndexChar(char charToCompare);
 	int getCount();
 	string getName();
 
 private:
 	// properties
 	string functionName;
+	char indexChar;
 	int count;
 };
 

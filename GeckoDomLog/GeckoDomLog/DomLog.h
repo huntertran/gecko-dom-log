@@ -4,18 +4,20 @@
 #include <string>
 using std::string;
 
+#include <vector>
+using std::vector;
+
 #include "DomLogNode.h"
 
 static class DomLog
 {
 public:
-	DomLog();
 	void recordLog(string functionName);
+	void pushNewName(string functionName, int initialCount = 1);
 	void getDomLogs();
 
 private:
-	const static int numberOfRecords = 50;
-	DomLogNode domLogs[numberOfRecords];
+	vector<DomLogNode> domLogs;
 } domLog;
 
 #endif
