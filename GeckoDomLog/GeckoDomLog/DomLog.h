@@ -7,7 +7,6 @@ using std::string;
 #include <vector>
 using std::vector;
 
-#include <fstream>
 using std::ofstream;
 
 #include "DomLogNode.h"
