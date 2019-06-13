@@ -7,10 +7,8 @@ using std::string;
 class DomLogNode
 {
 public:
-	// constructor
 	DomLogNode();
 
-	// methods
 	void setNode(string name, int count);
 	int increaseCount();
 	bool compareName(string nameToCompare);
@@ -19,7 +17,6 @@ public:
 	string getName();
 
 private:
-	// properties
 	string functionName;
 	char indexChar;
 	int count;

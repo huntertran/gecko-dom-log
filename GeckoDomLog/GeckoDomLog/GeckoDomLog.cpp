@@ -1,6 +1,3 @@
-// GeckoDomLog.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -9,10 +6,6 @@ using std::endl;
 
 int main()
 {
-    cout << "Hello World!\n";
-
-	//DomLog domLog;
-
 	domLog.recordLog("GetElementById");
 	domLog.recordLog("GetElementById");
 	domLog.recordLog("GetElementById");
