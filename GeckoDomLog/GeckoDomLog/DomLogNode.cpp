@@ -13,7 +13,6 @@ DomLogNode::DomLogNode()
 void DomLogNode::setNode(string name, int initialCount)
 {
 	functionName = name;
-	indexChar = name[0];
 	count = initialCount;
 }
 
@@ -25,11 +24,6 @@ int DomLogNode::increaseCount()
 bool DomLogNode::compareName(string nameToCompare)
 {
 	return nameToCompare == functionName;
-}
-
-bool DomLogNode::compareIndexChar(char charToCompare)
-{
-	return charToCompare == indexChar;
 }
 
 int DomLogNode::getCount()

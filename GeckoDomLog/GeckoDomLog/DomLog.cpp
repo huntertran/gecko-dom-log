@@ -16,18 +16,15 @@ void DomLog::recordLog(string functionName)
 
 	bool isNewName = true;
 
-	for (int i=0;i<size;i++)
+	for (int i = 0; i < size; i++)
 	{
-		DomLogNode *currentNode = &domLogs.at(i);
+		DomLogNode* currentNode = &domLogs.at(i);
 
-		if((*currentNode).compareIndexChar(functionName[0]))
+		if ((*currentNode).compareName(functionName))
 		{
-			if ((*currentNode).compareName(functionName))
-			{
-				(*currentNode).increaseCount();
-				isNewName = false;
-				break;
-			}
+			(*currentNode).increaseCount();
+			isNewName = false;
+			break;
 		}
 	}
 
